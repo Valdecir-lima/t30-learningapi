@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function somar (n1,n2, sucess, fail){
+            let s = n1+n2;
+            if(s >0){
+                sucess (s);}
+            else{
+                fail ("numero negativo")
+            }
+        }
+        function quadrado (r, sucess, fail){
+            let q = r*r;
+            if(q >25){
+                sucess(q);}
+            else{
+                fail ("numero menor que 5")
+            }
+        }
+
+        s= somar(
+            10,
+            -7,
+            function (res){
+            quadrado(res, function (q){
+                alert(q);
+                },
+                function (erro){
+                alert(erro);
+                }
+                );
+            },
+            function (erro){
+                alert(erro);
+            }
+        );
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
